@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GODIAM — next-generation digital connectivity for Nigeria, built for the 5G era and the future beyond.">
+<title>GODIAM | Your Connection. Your Future.</title>
+
+<style>
+:root{
+ --blue:#0878f9;--blue2:#0057d9;--navy:#071b35;--navy2:#0b294b;
+ --text:#10213a;--muted:#607089;--bg:#f5f8fc;--white:#fff;
+ --line:#dce5ef;--cyan:#55cfff;--green:#18b878;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+ color:var(--text);background:var(--bg);overflow-x:hidden
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{
+ background:rgba(255,255,255,.96);backdrop-filter:blur(16px);
+ border-bottom:1px solid #e8edf3;position:sticky;top:0;z-index:50
+}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:950;font-size:22px;color:#101d30}
+.mark{
+ width:39px;height:39px;border-radius:11px;display:grid;place-items:center;color:#fff;
+ background:linear-gradient(145deg,#1b8bff,#0056d8);box-shadow:0 5px 16px rgba(0,94,220,.24)
+}
+.navlinks{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:750;color:#334967}
+.navlinks a:hover{color:var(--blue)}
+.navcta{
+ background:linear-gradient(135deg,#1587ff,#0061e5);color:#fff!important;
+ padding:11px 18px;border-radius:9px;box-shadow:0 7px 18px rgba(0,102,230,.18)
+}
+.future-strip{
+ padding:9px 0;background:#071a31;color:#91a8c3;overflow:hidden;white-space:nowrap;
+ font-size:9px;letter-spacing:2.4px;text-transform:uppercase
+}
+.future-strip span{margin-right:48px}
+.hero{
+ position:relative;overflow:hidden;padding:76px 0 70px;
+ background:
+ linear-gradient(90deg,rgba(4,20,39,.98) 0%,rgba(6,31,57,.92) 45%,rgba(7,37,68,.72) 100%),
+ radial-gradient(circle at 78% 48%,rgba(43,154,255,.38),transparent 35%);
+ color:#fff
+}
+.hero:before{
+ content:"";position:absolute;inset:0;opacity:.16;
+ background-image:linear-gradient(rgba(112,196,255,.16) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(112,196,255,.16) 1px,transparent 1px);
+ background-size:50px 50px;mask-image:linear-gradient(90deg,black,transparent)
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.badge{
+ display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:999px;
+ background:rgba(103,198,255,.1);border:1px solid rgba(125,211,255,.26);
+ color:#aee6ff;font-size:11px;font-weight:850;letter-spacing:1.2px
+}
+.badge span{width:7px;height:7px;background:#45e3a4;border-radius:50%;box-shadow:0 0 10px #45e3a4}
+h1{
+ font-size:clamp(47px,6.2vw,76px);line-height:.98;letter-spacing:-3px;margin:18px 0 18px;color:#fff
+}
+.hero p{font-size:17px;line-height:1.7;color:#d0ddec;max-width:600px}
+.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.primary,.secondary{display:inline-block;padding:13px 20px;border-radius:9px;font-weight:850;transition:.2s}
+.primary{background:linear-gradient(135deg,#1590ff,#0062e8);color:#fff;box-shadow:0 9px 25px rgba(0,99,230,.24)}
+.primary:hover{transform:translateY(-2px)}
+.secondary{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.4);color:#fff}
+.hero-card{
+ background:rgba(255,255,255,.06);border:1px solid rgba(156,218,255,.25);
+ border-radius:26px;padding:14px;box-shadow:0 30px 70px rgba(0,0,0,.25)
+}
+.phone{
+ min-height:390px;border-radius:19px;position:relative;overflow:hidden;padding:26px;
+ background:
+ radial-gradient(circle at 50% 52%,rgba(0,173,255,.25),transparent 17%),
+ radial-gradient(circle at 70% 40%,rgba(54,100,255,.23),transparent 28%),
+ linear-gradient(145deg,#0a3159,#041323 70%);color:#fff
+}
+.phone:before{
+ content:"";position:absolute;width:380px;height:380px;left:50%;top:52%;
+ transform:translate(-50%,-50%);border:1px solid rgba(89,209,255,.24);border-radius:50%;
+ box-shadow:0 0 0 45px rgba(65,177,255,.025),0 0 0 95px rgba(65,177,255,.018)
+}
+.phone:after{
+ content:"";position:absolute;left:50%;top:52%;width:11px;height:11px;border-radius:50%;
+ background:#66ddff;box-shadow:0 0 24px 9px rgba(66,202,255,.65)
+}
+.phone-top{display:flex;justify-content:space-between;font-size:10px;letter-spacing:2px;color:#9bc4e7;position:relative;z-index:2}
+.chip{
+ width:68px;height:50px;border-radius:9px;margin:50px 0 24px;
+ background:linear-gradient(135deg,#dbe9f1,#76d7f5 55%,#31536d);box-shadow:0 5px 20px rgba(0,0,0,.25)
+}
+.phone h3{font-size:29px;margin:0;position:relative;z-index:2}.phone p{color:#b9cfe4;font-size:13px;position:relative;z-index:2}
+.phone-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:48px;position:relative;z-index:2}
+.price-big{font-size:30px;font-weight:950}.naira{font-size:16px}
+section{padding:78px 0}
+.head{text-align:center;max-width:700px;margin:0 auto 42px}
+.head h2{font-size:37px;letter-spacing:-1.4px;margin:0 0 10px;color:var(--navy)}
+.head p{margin:0;color:var(--muted);line-height:1.65}
+.plans,.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plan,.feature,.coverage-card,.form{
+ background:#fff;border:1px solid var(--line);border-radius:15px;padding:25px;
+ box-shadow:0 8px 30px rgba(25,55,90,.055)
+}
+.plan{position:relative}
+.plan:hover,.feature:hover{transform:translateY(-3px);transition:.2s;box-shadow:0 15px 35px rgba(25,55,90,.09)}
+.plan.featured{border:2px solid #1383ff;box-shadow:0 12px 34px rgba(0,105,230,.12)}
+.popular{
+ position:absolute;right:14px;top:-11px;background:#0878f9;color:#fff;padding:5px 9px;
+ border-radius:6px;font-size:9px;font-weight:900
+}
+.plan h3{font-size:20px;margin:0;color:#16365a}.plan .cost{font-size:34px;font-weight:950;color:var(--navy);margin:13px 0}
+.cost small{font-size:12px;color:var(--muted);font-weight:500}
+.plan ul{list-style:none;padding:0;margin:17px 0}.plan li{padding:7px 0;color:#52657c}
+.plan li:before{content:"✓";color:#0878f9;font-weight:900;margin-right:8px}
+.plan .primary{width:100%;text-align:center;margin-top:8px}
+.features{background:#fff}
+.icon{
+ width:44px;height:44px;background:#edf6ff;color:#0878f9;display:grid;place-items:center;
+ border-radius:11px;margin-bottom:14px;font-size:19px
+}
+.feature h3{margin:0 0 6px;color:#142b49}.feature p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.coverage-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.coverage-card{padding:14px}
+.map{
+ height:315px;border-radius:13px;position:relative;overflow:hidden;
+ background:
+ radial-gradient(circle at 22% 36%,rgba(30,143,255,.28) 0 3px,transparent 4px),
+ radial-gradient(circle at 65% 58%,rgba(30,143,255,.25) 0 4px,transparent 5px),
+ linear-gradient(145deg,#eef7ff,#dcecff)
+}
+.map:before{
+ content:"";position:absolute;inset:0;
+ background:repeating-radial-gradient(circle at 50% 50%,transparent 0 35px,rgba(0,110,230,.08) 36px 37px)
+}
+.map-label{position:absolute;bottom:15px;left:15px;background:#fff;padding:7px 10px;border-radius:7px;font-size:11px;font-weight:800;color:#173a60;box-shadow:0 5px 18px rgba(20,60,100,.1)}
+.coverage-copy h2{font-size:38px;line-height:1.08;color:var(--navy);margin:0 0 13px}.coverage-copy p{color:var(--muted);line-height:1.7}
+.notice{padding:13px;border:1px solid var(--line);background:#fff;border-radius:9px;color:#5b6d83;font-size:13px;margin-top:17px}
+.contact{background:linear-gradient(135deg,#06172e,#0b294b);color:#fff}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}.contact h2{font-size:40px;margin:0 0 10px}.contact p{color:#b8c9da;line-height:1.7}
+.details{margin-top:25px}.detail{margin:15px 0;color:#d5e1ec}
+.form{color:var(--text)}.form h3{margin:0}.form p{font-size:13px;color:var(--muted);margin-top:5px}
+.form label{display:block;font-size:12px;font-weight:800;margin:13px 0 7px}.form input,.form textarea,.form select{
+ width:100%;padding:12px;border:1px solid #d5dfe9;border-radius:8px;font:inherit;background:#fff;color:var(--text)
+}
+.form textarea{height:95px}.form button{border:0;width:100%;padding:14px;margin-top:15px;border-radius:9px;background:linear-gradient(135deg,#1388ff,#0062e8);color:#fff;font-weight:900;font-size:15px;cursor:pointer}
+.success{display:none;margin-top:10px;padding:10px;background:#e9f8ef;color:#08723b;border-radius:8px;font-size:13px}
+footer{background:#041226;color:#9eafc3;padding:25px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:800px){
+ .navlinks{display:none}.hero-grid,.plans,.features-grid,.coverage-grid,.contact-grid{grid-template-columns:1fr}
+ .hero{padding:58px 0}.hero-card{margin-top:8px}section{padding:62px 0}
+}
+</style>
+
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a class="logo" href="#home"><span class="mark">N</span>GODIAM</a>
+  <nav class="navlinks">
+   <a href="#services">Experience</a><a href="#plans">Plans</a><a href="#vision">6G Vision</a><a href="#coverage">Network</a><a href="#contact">Contact</a><a class="navcta" href="#contact">Enter GODIAM</a>
+  </nav>
+ </div>
+</header>
+<div class="future-strip"><div class="container"><span>GODIAM CORE</span><span>5G TODAY</span><span>6G TOMORROW</span><span>ONE CONNECTED NATION</span><span>YOUR DIGITAL FUTURE</span></div></div>
+
+<main id="home">
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="badge"><span></span> 5G • 6G FUTURE • BUILT FOR NIGERIA</div>
+   <h1>5G • 6G FUTURE<br>Your Connection.<br>Your Future.</h1>
+   <p>GODIAM is building a smarter, faster and more connected Nigeria — with 5G today and a bold vision for tomorrow with 6G.</p>
+   <div class="actions"><a class="primary" href="#plans">Explore Plans →</a><a class="secondary" href="#vision">◉ Our Vision</a></div>
+  </div>
+  <div class="hero-card">
+   <div class="phone">
+    <div class="phone-top"><span>GODIAM</span><span>NETWORK</span></div>
+    <div class="chip"></div>
+    <h3>GODIAM CONNECT</h3><div style="margin-top:16px;display:flex;gap:9px;flex-wrap:wrap;position:relative;z-index:2"><span style="padding:6px 9px;border-radius:99px;background:rgba(85,207,255,.12);border:1px solid rgba(85,207,255,.25);font-size:10px;color:#bcecff">5G ACTIVE</span><span style="padding:6px 9px;border-radius:99px;background:rgba(100,130,255,.12);border:1px solid rgba(130,150,255,.25);font-size:10px;color:#ccd5ff">6G VISION</span></div>
+    <p>A future-facing connection experience designed for Nigeria.</p>
+    <div class="phone-bottom"><div><small>Plans from</small><div class="price-big"><span class="naira">₦</span>5,000</div></div><span>Monthly</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+
+<section id="services" style="background:#fff">
+ <div class="container">
+  <div class="head">
+   <h2>What you can do with GODIAM</h2>
+   <p>The GODIAM experience is designed to connect SIM services, plans, payments and account intelligence into one digital future.</p>
+  </div>
+  <div class="features-grid">
+   <div class="feature">
+    <div class="icon">📱</div>
+    <h3>Buy a SIM</h3>
+    <p>Choose a plan and submit a SIM order with your Nigerian delivery details.</p>
+    <a class="primary" href="#contact" style="margin-top:16px">Buy SIM</a>
+   </div>
+   <div class="feature">
+    <div class="icon">🔄</div>
+    <h3>Activate SIM</h3>
+    <p>Start an activation flow for an existing GODIAM SIM.</p>
+    <a class="secondary" href="#activate" style="display:inline-block;margin-top:16px">Activate</a>
+   </div>
+   <div class="feature">
+    <div class="icon">💳</div>
+    <h3>Buy Data & Airtime</h3>
+    <p>Offer data bundles, airtime and recurring plans through a connected payment service.</p>
+    <a class="secondary" href="#topup" style="display:inline-block;margin-top:16px">Top Up</a>
+   </div>
+   <div class="feature">
+    <div class="icon">📦</div>
+    <h3>Track SIM Delivery</h3>
+    <p>Customers can enter an order number to see their delivery status.</p>
+    <a class="secondary" href="#track" style="display:inline-block;margin-top:16px">Track Order</a>
+   </div>
+   <div class="feature">
+    <div class="icon">🔢</div>
+    <h3>Choose a Number</h3>
+    <p>Give customers a number-selection step when your telecom backend supports it.</p>
+    <a class="secondary" href="#numbers" style="display:inline-block;margin-top:16px">Choose Number</a>
+   </div>
+   <div class="feature">
+    <div class="icon">🧾</div>
+    <h3>Manage My Plan</h3>
+    <p>View a plan, renew it, change bundles or check account information.</p>
+    <a class="secondary" href="#account" style="display:inline-block;margin-top:16px">Manage Plan</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="activate">
+ <div class="container">
+  <div class="head"><h2>SIM Activation</h2><p>Customer activation interface — connect this to your verified SIM-registration and KYC provider.</p></div>
+  <div class="form" style="max-width:650px;margin:auto">
+   <label>GODIAM SIM Number</label><input placeholder="Enter SIM number">
+   <label>Phone Number</label><input type="tel" placeholder="+234 800 000 0000">
+   <label>Activation Code</label><input placeholder="Enter activation code">
+   <button type="button" onclick="demo('activationMsg')">Continue Activation</button>
+   <div class="success" id="activationMsg">Activation interface ready. Connect your approved telecom/SIM-registration backend before launch.</div>
+  </div>
+ </div>
+</section>
+
+<section id="topup" style="background:#fff">
+ <div class="container">
+  <div class="head"><h2>Data & Airtime</h2><p>Choose a Nigerian bundle below. These are sample catalogue options until connected to a real telecom/API provider.</p></div>
+  <div class="plans">
+   <article class="plan"><h3>Daily Data</h3><div class="cost">₦500</div><ul><li>1 GB data</li><li>24-hour validity</li><li>Instant top-up flow</li></ul><a class="primary" href="#contact">Buy Bundle</a></article>
+   <article class="plan featured"><span class="popular">POPULAR</span><h3>Weekly Data</h3><div class="cost">₦1,500</div><ul><li>5 GB data</li><li>7-day validity</li><li>Instant top-up flow</li></ul><a class="primary" href="#contact">Buy Bundle</a></article>
+   <article class="plan"><h3>Monthly Data</h3><div class="cost">₦5,000</div><ul><li>15 GB data</li><li>30-day validity</li><li>Instant top-up flow</li></ul><a class="primary" href="#contact">Buy Bundle</a></article>
+  </div>
+ </div>
+</section>
+
+<section id="track">
+ <div class="container">
+  <div class="head"><h2>Track Your SIM</h2><p>Enter your order reference to check delivery information.</p></div>
+  <div class="form" style="max-width:600px;margin:auto">
+   <label>Order Reference</label><input id="tracking" placeholder="e.g. GDM-2026-000001">
+   <button type="button" onclick="trackOrder()">Track Order</button>
+   <div class="success" id="trackingMsg"></div>
+  </div>
+ </div>
+</section>
+
+<section id="numbers" style="background:#fff">
+ <div class="container">
+  <div class="head"><h2>Choose Your Number</h2><p>A number-selection interface can be connected to your real available-number inventory.</p></div>
+  <div class="plans">
+   <article class="plan"><h3>Standard Number</h3><div class="cost">Included</div><p style="color:#667085">Select from available numbers during SIM ordering.</p><a class="primary" href="#contact">Select Number</a></article>
+   <article class="plan"><h3>Preferred Number</h3><div class="cost">₦2,000</div><p style="color:#667085">Request a preferred number pattern, subject to availability.</p><a class="primary" href="#contact">Request Number</a></article>
+   <article class="plan"><h3>Premium Number</h3><div class="cost">From ₦10,000</div><p style="color:#667085">Premium-number inventory and pricing can be managed here.</p><a class="primary" href="#contact">View Numbers</a></article>
+  </div>
+ </div>
+</section>
+
+<section id="account">
+ <div class="container">
+  <div class="head"><h2>My GODIAM</h2><p>Customer account area for plan management, usage and renewals.</p></div>
+  <div class="form" style="max-width:600px;margin:auto">
+   <label>GODIAM Phone Number</label><input type="tel" placeholder="+234 800 000 0000">
+   <label>Account PIN</label><input type="password" placeholder="Enter your PIN">
+   <button type="button" onclick="demo('accountMsg')">Sign In</button>
+   <div class="success" id="accountMsg">GODIAM account interface ready. Connect your production authentication before launch.</div>
+  </div>
+ </div>
+</section>
+
+<section id="plans">
+ <div class="container">
+  <div class="head"><h2>GODIAM SIM Plans</h2><p>Choose the connection layer that fits your world. Pricing below is sample content until GODIAM's live commercial catalogue is connected.</p></div>
+  <div class="plans">
+   <article class="plan"><h3>GODIAM CORE</h3><div class="cost">₦5,000 <small>/ month</small></div><ul><li>5 GB data</li><li>All-network calls</li><li>SMS included</li><li>4G access where available</li></ul><a class="primary" href="#contact">Get GODIAM CORE</a></article>
+   <article class="plan featured"><span class="popular">POPULAR</span><h3>GODIAM PULSE</h3><div class="cost">₦10,000 <small>/ month</small></div><ul><li>15 GB data</li><li>All-network calls</li><li>SMS included</li><li>High-speed access where available</li></ul><a class="primary" href="#contact">Get GODIAM PULSE</a></article>
+   <article class="plan"><h3>GODIAM INFINITE</h3><div class="cost">₦20,000 <small>/ month</small></div><ul><li>40 GB data</li><li>All-network calls</li><li>SMS included</li><li>High-speed access where available</li></ul><a class="primary" href="#contact">Get GODIAM INFINITE</a></article>
+  </div>
+ </div>
+</section>
+
+<section id="benefits" class="features">
+ <div class="container">
+  <div class="head"><h2>Why GODIAM?</h2><p>A new digital connection experience for Nigeria — designed for today, prepared for tomorrow.</p></div>
+  <div class="features-grid">
+   <div class="feature"><div class="icon">⚡</div><h3>Easy activation</h3><p>Request your SIM through a simple online process.</p></div>
+   <div class="feature"><div class="icon">📶</div><h3>Built for connectivity</h3><p>Use available network service in supported locations across Nigeria.</p></div>
+   <div class="feature"><div class="icon">🚀</div><h3>6G Dream</h3><p>GODIAM is positioned as a future-facing brand, with 6G as the long-term vision rather than a claim of current 6G availability.</p></div>
+  </div>
+ </div>
+</section>
+
+
+<section id="vision">
+ <div class="container">
+  <div class="head">
+   <h2>Beyond 5G begins with imagination.</h2>
+   <p>GODIAM is designed around a simple idea: connectivity should keep evolving with the people who use it.</p>
+  </div>
+  <div class="plans">
+   <article class="plan"><h3>NOW / 5G</h3><div class="cost">Connect</div><ul><li>Fast everyday access</li><li>Digital-first services</li><li>Designed around Nigeria</li></ul></article>
+   <article class="plan featured"><span class="popular">GODIAM VISION</span><h3>NEXT / 6G</h3><div class="cost">Evolve</div><ul><li>Long-term future roadmap</li><li>Smarter connected experiences</li><li>Built for what comes next</li></ul></article>
+   <article class="plan"><h3>BEYOND</h3><div class="cost">Imagine</div><ul><li>Connected devices</li><li>Intelligent digital ecosystems</li><li>A future we build forward</li></ul></article>
+  </div>
+ </div>
+</section>
+
+<section id="coverage">
+ <div class="container coverage-grid">
+  <div class="coverage-card"><div class="map"><div class="map-label">Nigeria • Coverage</div></div></div>
+  <div class="coverage-copy"><h2>One Nigeria. One Connected Future.</h2><p>Use this area to publish GODIAM's verified Nigerian coverage map and supported locations. The visual shown here is a website mockup and does not represent confirmed network coverage.</p><div class="notice"><strong>Coverage:</strong> Actual service depends on the network infrastructure and location. Replace this notice with your verified coverage information before launch.</div><a class="primary" href="#contact" style="margin-top:20px;display:inline-block">Ask About Coverage</a></div>
+ </div>
+</section>
+
+<section id="contact" class="contact">
+ <div class="container contact-grid">
+  <div>
+   <h2>Get your GODIAM SIM.</h2>
+   <p>Submit your details and use this form as the starting point for your Nigerian customer onboarding process.</p>
+   <div class="details">
+    <div class="detail">📞 Customer Support: +234 XXX XXX XXXX</div>
+    <div class="detail">✉️ godstimeota2@gmail.com</div>
+    <div class="detail">📍 Nigeria</div>
+    <div class="detail">🕘 Monday–Saturday, 8:00 AM–6:00 PM</div>
+   </div>
+  </div>
+  <form class="form" id="requestForm">
+   <h3>Enter GODIAM</h3><p>Enter your information to submit a request.</p>
+   <label for="name">Customer Name</label><input id="name" required placeholder="Enter your full name">
+   <label for="phone">Phone Number</label><input id="phone" type="tel" required placeholder="+234 800 000 0000">
+   <label for="plan">Preferred Plan</label><select id="plan"><option>GODIAM CORE</option><option>GODIAM PULSE</option><option>GODIAM INFINITE</option></select>
+   <label for="message">Message</label><textarea id="message" placeholder="How can we help?"></textarea>
+   <button type="submit">Submit Request</button>
+   <div class="success" id="success">Your demo request has been received. Connect this form to your real customer system before launch.</div>
+  </form>
+ </div>
+</section>
+</main>
+<footer><div class="container foot"><span>© 2026 GODIAM Nigeria</span><span>Terms · Privacy · Support · Nigeria</span></div></footer>
+<script>
+document.getElementById('requestForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('success').style.display='block';});
+
+function demo(id){
+ const el=document.getElementById(id);
+ el.style.display='block';
+}
+function trackOrder(){
+ const input=document.getElementById('tracking').value.trim();
+ const el=document.getElementById('trackingMsg');
+ el.style.display='block';
+ el.textContent=input
+  ? 'Demo result: order reference '+input+' is ready to connect to your live delivery-tracking system.'
+  : 'Please enter an order reference.';
+}
+</script>
+</body>
+</html>
